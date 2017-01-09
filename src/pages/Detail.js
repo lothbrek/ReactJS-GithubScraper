@@ -39,7 +39,7 @@ class Detail extends React.Component {
             const author = commit.author ? commit.author.login : 'Anonymous';
 
             return (<p key={index}>
-                <strong>{author}</strong>: 
+                <strong>{author}</strong>:
                 <a href={commit.html_url}> {commit.commit.message}</a>.
             </p>);
         });
@@ -50,7 +50,7 @@ class Detail extends React.Component {
             const owner = fork.owner ? fork.owner.login : 'Anonymous';
 
             return (<p key={index}>
-                <strong>{owner}</strong>: forked to 
+                <strong>{owner}</strong>: forked to
                 <a href={fork.html_url}> {fork.html_url}</a> at {fork.created_at}.
             </p>);
         });
@@ -61,7 +61,7 @@ class Detail extends React.Component {
             const user = pull.user ? pull.user.login : 'Anonymous';
 
             return (<p key={index}>
-                <strong>{user}</strong>: 
+                <strong>{user}</strong>:
                 <a href={pull.html_url}> {pull.body}</a>.
             </p>);
         });
@@ -78,21 +78,23 @@ class Detail extends React.Component {
             content = this.renderPulls();
         }
 
-        return (<div>
-    <button onClick={this.selectMode.bind(this)} data-mode="commits">
-        Show Commits
-    </button>
+        return (
+          <div>
+            <button onClick={this.selectMode.bind(this)} data-mode="commits">
+                Show Commits
+            </button>
 
-    <button onClick={this.selectMode.bind(this)} data-mode="forks">
-        Show Forks
-    </button>
+            <button onClick={this.selectMode.bind(this)} data-mode="forks">
+                Show Forks
+            </button>
 
-    <button onClick={this.selectMode.bind(this)} data-mode="pulls">
-        Show Pulls
-    </button>
+            <button onClick={this.selectMode.bind(this)} data-mode="pulls">
+                Show Pulls
+            </button>
 
-    {content}
-</div>);
+          {content}
+        </div>
+      );
     }
 }
 
