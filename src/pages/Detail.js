@@ -1,6 +1,8 @@
 import React from 'react';
 import ajax from 'superagent';
 
+//webpack-dev-server
+
 class Detail extends React.Component {
     constructor(props) {
         super(props);
