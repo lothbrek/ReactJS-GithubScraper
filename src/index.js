@@ -5,6 +5,8 @@ import { Router, Route, IndexRoute, useRouterHistory } from 'react-router';
 import { createHashHistory } from 'history';
 
 ReactDOM.render(
-	<Detail message="this is coming fr!"/>,
+	<Router>
+		<Route path="/" conponent = { Detail } />
+	</Router>,
 	document.getElementById('app')
-);
+); //32
